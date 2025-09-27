@@ -1,9 +1,8 @@
 /* MOBILE's FIRST - Custom properties */
 /* This classes will be then modified for bigger screens */
 
-#mowatave {
-	color: #2bd284 !important;
-	text-decoration: underline;
+.link-dark{
+	text-underline-offset: 2px
 }
 
 .underline {
@@ -12,15 +11,6 @@
 
 a {
 	text-decoration-thickness: 1px;
-}
-
-#hobbiesH4 {
-	text-align: center;
-}
-
-#hobbie1, #hobbie2, #hobbie3 {
-	text-align: center;
-	margin-top: 1em;
 }
 
 .abme-honors-bullet{
@@ -53,7 +43,7 @@ li > .active {
 	font-family: 'Lucida Console', monospace;
 }
 
-/* NICOLAS MESEGUER CONTACT INFO - Related*/
+/* CONTACT INFO - Related*/
 .profilepicture {
 	max-height: 300px;
 	min-width: 150px;
@@ -87,7 +77,7 @@ li > .active {
 }
 
 .pub-authors .pub-author {
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .pub-congress {
@@ -291,15 +281,6 @@ li > .active {
 /* BIGGER SCREENS */
 @media (min-width: 768px) {
 
-	#hobbiesH4 {
-		text-align: left;
-	}
-
-	#hobbie1, #hobbie2, #hobbie3 {
-		text-align: left;
-		margin-top: 0;
-	}
-
 	.profilepicture {
 		margin-left: 0%;
 		margin-right: 0%;
@@ -308,4 +289,47 @@ li > .active {
 	.abme-honors-bullet{
 		margin-left: 40px;
 	}
+}
+
+.masonry {
+  column-count: 2;          /* 2 columns */
+  column-gap: 1.5rem;         /* space between columns */
+}
+
+.masonry-item {
+  break-inside: avoid;      /* prevents items from breaking */
+  border-radius: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.masonry-item img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.masonry-item p {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0.75rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  flex-direction: column;
+}
+
+.img-wrapper {
+	max-width: 60%;
+}
+
+.img-lab {
+  max-width: 100%;
+  height: auto
 }

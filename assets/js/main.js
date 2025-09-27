@@ -1,12 +1,10 @@
 // By default, all the divs are hidden, if you were to add a new div, you should hide it here.
 // If you want to show a div, you should clic on the corresponding link on the navbar.
-$('#educationContent').hide();
-$('#publicationsContent').hide();
-$('#experienceContent').hide();
-$('#conferencesContent').hide();
-$('#projectsContent').hide();
-$('#tutorialsContent').hide();
-$('#academicContent').hide();
+$('#researchContent').hide();
+$('#preludeContent').hide();
+$('#galleryContent').hide();
+$('#opportunityContent').hide();
+$('#labContent').hide();
 $('#particularContent').hide();
 
 // Options menu is hidden by default
@@ -15,7 +13,7 @@ $('#lan').hide();
 
 // Hides all the divs in the particular, unless the first one
 $('.particular-clickable').next().hide();
-$('.particular-clickable').next()[0].style.display="block";
+//$('.particular-clickable').next()[0].style.display="block";
 
 $(document).ready(function(){
 
@@ -26,9 +24,6 @@ $(document).ready(function(){
 			localStorage.theme = "dark";
 	}
 	
-	// Create the language manager
-	const langManager = new LanguageManager();
-
 	// Always load the light theme
 	$('<link>').appendTo('head').attr({
 		type: 'text/css', 
@@ -65,8 +60,8 @@ $(document).ready(function(){
 
 	});
 
-	// Handle 'Education' content
-	$('#education').click(function(e) {
+	// Handle 'prelude' content
+	$('#prelude').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
 		if(!$(e.target).hasClass('active')) {
@@ -78,12 +73,13 @@ $(document).ready(function(){
 			clearActiveDivs();
 
 			// Show current content
-			activateDiv('#educationContent');
+			activateDiv('#preludeContent');
 		}
 	});
 
-	// Handle 'Publications' content
-	$('#publications').click(function(e) {
+
+	// Handle 'research' content
+	$('#research').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
 		if(!$(e.target).hasClass('active')) {
@@ -95,12 +91,12 @@ $(document).ready(function(){
 			clearActiveDivs();
 
 			// Show current content
-			activateDiv('#publicationsContent');
+			activateDiv('#researchContent');
 		}
 	});
 
-	// Handle 'Blog' content
-	$('#tutorials').click(function(e) {
+	// Handle 'Gallery' content
+	$('#gallery').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
 		if(!$(e.target).hasClass('active')) {
@@ -112,12 +108,12 @@ $(document).ready(function(){
 			clearActiveDivs();
 
 			// Show current content
-			activateDiv('#tutorialsContent');
+			activateDiv('#galleryContent');
 		}
 	});
 
-	// Handle 'Academic' content
-	$('#academic').click(function(e) {
+	// Handle 'Opportunities' content
+	$('#opportunity').click(function(e) {
 
 		// If the div has already the class active, no need to reload the divs...
 		if(!$(e.target).hasClass('active')) {
@@ -129,7 +125,24 @@ $(document).ready(function(){
 			clearActiveDivs();
 
 			// Show current content
-			activateDiv('#academicContent');
+			activateDiv('#opportunityContent');
+		}
+	});
+
+	// Handle 'Labs' content
+	$('#lab').click(function(e) {
+
+		// If the div has already the class active, no need to reload the divs...
+		if(!$(e.target).hasClass('active')) {
+			// Update navbar
+			clearActiveLinks();
+			activateLink(e);
+
+			// Hide other contents
+			clearActiveDivs();
+
+			// Show current content
+			activateDiv('#labContent');
 		}
 	});
 
@@ -299,11 +312,6 @@ $(document).ready(function(){
 		}
 	})
 
-	// Alternates between the different available languages
-	$('#lan').click(function() {
-        const newLang = langManager.getNextLanguage();
-        langManager.setLanguage(newLang);
-    });
 });
 
 // Clears the active links
